@@ -1,0 +1,22 @@
+div{
+    margin-left: 25px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 20%;
+}
+
+label{
+    margin-top: 15px;
+}
+
+button{
+    margin-top: 25px;
+    width: 10%;
+    border-radius: 7px;
+}
