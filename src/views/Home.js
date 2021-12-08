@@ -31,8 +31,9 @@ export default function Home() {
                             <Card.Title>{item.product_name}</Card.Title>
                             <Card.Text>
                                 {item.description}
+                                <h4>${item.price}</h4>
                             </Card.Text>
-                            <Button variant="primary">Comprar</Button>
+                            <a class="btn btn-primary" href="#" role="button">Comprar</a>
                         </Card.Body>
                     </Card>
                     </Col>
