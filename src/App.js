@@ -1,12 +1,15 @@
 import './App.css';
 import Routes from './routes';
 import {UserProvider} from './context/userContext';
+import {ProductProvider, useProductContext} from './context/productContext';
 
 function App() {
   return (
     <>
     <UserProvider>
-      <Routes />
+      <ProductProvider>
+        <Routes />
+      </ProductProvider>
     </UserProvider>
     </>
   );

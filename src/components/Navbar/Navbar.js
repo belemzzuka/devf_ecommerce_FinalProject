@@ -2,16 +2,25 @@ import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import {useUserContext} from '../../context/userContext'
+import {useProductContext} from "../../context/productContext";
+import SearchBar from "./SearchBar";
+
+
 
 const Navbar = () => {
   //const token = window.localStorage.getItem('token'); Ya no se necesita porque traes la validacion del token de Context
   const context = useUserContext()
-
+  const contextProduct = useProductContext()
+  
+  console.log(contextProduct.producto.filter(item => item.product_name.toLowerCase().includes('fish'))  );
   return (
     <>
       <nav className="navbar">
         {/* <!-- LOGO --> */}
         <div className="logo">Tienda virtual</div>
+        <a>
+          <SearchBar/>
+        </a>
         {/* <!-- NAVIGATION MENU --> */}
         <ul className="nav-links">
           {/* <!-- USING CHECKBOX HACK --> */}

@@ -7,6 +7,8 @@ import Item from '../views/Item';
 import Profile from '../views/Profile';
 import Navbar from '../components/Navbar';
 import { useUserContext } from '../context/userContext';
+import Search from '../views/SearchPage';
+import SearchPage from '../views/SearchPage';
 
 const Logout = () => {
     window.localStorage.removeItem('token'); //Aquí solamente remueve el token
@@ -26,6 +28,7 @@ export default function Routes() {
             <Route exact path="/item" component={Item} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/search" component={SearchPage} />
         </Switch>
     </Router>
     );
