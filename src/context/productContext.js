@@ -7,7 +7,7 @@ const ProductContext = React.createContext(); //necesita un proveedor y un consu
 function ProductProvider(props){
     //const token = window.localStorage.getItem('token'); //variable que trae el token de localStorage
     const [producto, setProducto ] = useState([]);  //aquí vamos a guardar los datos de los productos
-    const [ valorInput, setValorInput] = useState("");
+    
     useEffect(() => {
         axios.get(`https://ecomerce-master.herokuapp.com/api/v1/item`)
         .then((response) => {

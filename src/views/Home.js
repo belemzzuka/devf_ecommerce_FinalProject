@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, Button, Row, Col, Container } from 'react-bootstrap';
-import { Link, useLocation, Switch, Route, useParams, BrowserRouter as Router } from 'react-router-dom'
+import { Card, Row, Col, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     const [ producto,setProducto ] = useState([]);

@@ -1,7 +1,7 @@
 import './App.css';
 import Routes from './routes';
 import {UserProvider} from './context/userContext';
-import {ProductProvider, useProductContext} from './context/productContext';
+import { ProductProvider } from './context/productContext';
 
 function App() {
   return (

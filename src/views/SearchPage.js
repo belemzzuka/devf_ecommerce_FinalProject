@@ -1,7 +1,7 @@
 import React from 'react'
 //import Search from '../components/Navbar/SearchBar'
 import { Card, Row, Col, Container } from 'react-bootstrap';
-import { Link, useLocation, Switch, Route, useParams, BrowserRouter as Router } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useProductContext } from '../context/productContext';
 
 
@@ -11,12 +11,7 @@ export default function SearchPage() {
   const contextProduct = useProductContext ();
   const search = useLocation().search;
   const filtro = new URLSearchParams(search).get('filtro');
-  console.log(filtro)
-  resultadosBusqueda = contextProduct.producto.filter(item => item.product_name.toLowerCase().includes(filtro));
-  console.log(resultadosBusqueda);
-
-
-
+  resultadosBusqueda = contextProduct.producto.filter(item => item.product_name.toLowerCase().includes(filtro.toLowerCase()));
   
   return (
     <Container>

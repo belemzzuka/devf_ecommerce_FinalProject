@@ -1,0 +1,12 @@
+.div__searchbar{
+    margin: 0;
+    width: 100%;
+}
+
+.div__searchbar input{
+    width: 100%;
+}
+
+.div__searchbar button{
+    width: 35%;
+}
