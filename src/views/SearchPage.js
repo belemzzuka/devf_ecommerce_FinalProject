@@ -19,7 +19,6 @@ export default function SearchPage() {
 
   
   return (
-    <Router>
     <Container>
     <h1>Home</h1>
     <Row className="g-4">
@@ -44,22 +43,8 @@ export default function SearchPage() {
         )
     })}
     </Row>
-    <Switch>
-          <Route path="/item/:id" children={<Child />} />
-        </Switch>
+
     </Container>
-    </Router>
+
   )
-}
-
-function Child() {
-  // We can use the `useParams` hook here to access
-  // the dynamic pieces of the URL.
-  let { id } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {id}</h3>
-    </div>
-  );
 }
