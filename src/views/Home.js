@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
+import { Link, useLocation, Switch, Route, useParams, BrowserRouter as Router } from 'react-router-dom'
 
 export default function Home() {
     const [ producto,setProducto ] = useState([]);
@@ -28,7 +29,9 @@ export default function Home() {
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={item.image} />
                         <Card.Body>
+                            <Link to={`/item/${item._id}`}>
                             <Card.Title>{item.product_name}</Card.Title>
+                            </Link>
                             <Card.Text>
                                 {item.description}
                                 <h3>$ {item.price}</h3>
