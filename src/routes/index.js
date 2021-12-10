@@ -29,6 +29,7 @@ export default function Routes() {
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/search" component={SearchPage} />
+            <Route path="/item/:id" component={Item} />
         </Switch>
     </Router>
     );

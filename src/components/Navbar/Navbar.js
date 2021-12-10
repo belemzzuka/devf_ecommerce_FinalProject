@@ -12,7 +12,7 @@ const Navbar = () => {
   const context = useUserContext()
   const contextProduct = useProductContext()
   
-  console.log(contextProduct.producto.filter(item => item.product_name.toLowerCase().includes('fish'))  );
+  //console.log(contextProduct.producto.filter(item => item.product_name.toLowerCase().includes('fish'))  );
   return (
     <>
       <nav className="navbar">
