@@ -11,6 +11,10 @@ input{
     width: 20%;
 }
 
+select{
+    width: 20%;
+}
+
 label{
     margin-top: 15px;
 }
