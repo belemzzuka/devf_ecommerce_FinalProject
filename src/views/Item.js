@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import withProtection from '../utils/withProtection';
+import { useUserContext } from '../context/userContext';
 import './Item.css';
+import { useHistory } from 'react-router';
+
+
 
 const Item = () => {
+    const context = useUserContext()
+    const history = useHistory();
     let { id } = useParams(); //bring product id from URL to build the endpoint
     const oneItemURL = `https://ecomerce-master.herokuapp.com/api/v1/item/${id}`
     const [ itemDescription, setItemDescription ] = useState({});
@@ -19,6 +25,10 @@ const Item = () => {
             console.log(error)
         })
     },[])
+
+    function Flogin () {
+        return history.push ("/login")
+    }
     
     return (
         <div className="itemdescription">
@@ -30,9 +40,15 @@ const Item = () => {
             <p>Manufacturer: {itemDescription.brand}</p>
             <p>Category: {itemDescription.category}</p>
             <h2>${itemDescription.price}</h2>
-            <a class="btn btn-primary" href="#" role="button">Comprar</a>
+            {context.usuarioActual ? (
+                <a class="btn btn-primary" href="#" role="button">Comprar</a>
+            ) : (
+                <a class="btn btn-secondary" href="#" role="button" onClick={Flogin}>Iniciar sesión</a>
+            ) }
+
         </div>
     )
 }
 
-export default withProtection(Item);
+//export default withProtection(Item);
+export default Item;

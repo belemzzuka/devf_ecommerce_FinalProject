@@ -11,7 +11,7 @@ const Navbar = () => {
   //const token = window.localStorage.getItem('token'); Ya no se necesita porque traes la validacion del token de Context
   const context = useUserContext()
   //const contextProduct = useProductContext()
-  
+
   return (
     <>
       <nav className="navbar">
@@ -32,7 +32,34 @@ const Navbar = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            {context.usuarioActual ? (
+
+            {context.usuarioActual && context.usuarioActual.user.role === "ADMIN" && 
+            
+            <>
+            <li>
+              <Link to="/profile">
+                Bienvenido {context.usuarioActual.user.first_name}
+              </Link>
+            </li>
+            <li>
+              <Link to="/item">Productos</Link>
+            </li>
+            <li>
+              <Link to="/logout">Logout</Link>
+            </li>
+            <li>
+              <Link to="/new">
+                Crear producto
+              </Link>
+            </li>
+            </>
+            
+            }
+            
+
+
+            
+            {context.usuarioActual && context.usuarioActual.user.role === "CUSTOMER" && 
             <>
             <li>
               <Link to="/profile">
@@ -46,16 +73,22 @@ const Navbar = () => {
               <Link to="/logout">Logout</Link>
             </li>
             </>
-            ) : ( //hasta donde cierra el parentesis se ejecuta si el usuarioActual existe. Lo siguiente a partir de aqui se ejecuta cuando no hay usuarioActual
-              <>
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/signup">Signup</Link>
-                </li>
-              </>
-            )}
+            }
+            
+            
+            
+            {!context.usuarioActual && 
+                          <>
+                          <li>
+                            <Link to="/login">Login</Link>
+                          </li>
+                          <li>
+                            <Link to="/signup">Signup</Link>
+                          </li>
+                        </>
+            }
+            
+
           </div>
         </ul>
       </nav>
