@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import {useUserContext} from '../../context/userContext'
 //import {useProductContext} from "../../context/productContext";
 import SearchBar from "./SearchBar";
+import { IconButton } from "@material-ui/core";
+import { ShoppingCart } from "@material-ui/icons";
+import { Badge } from "@material-ui/core";
 
 
 
@@ -11,6 +14,7 @@ const Navbar = () => {
   //const token = window.localStorage.getItem('token'); Ya no se necesita porque traes la validacion del token de Context
   const context = useUserContext()
   //const contextProduct = useProductContext()
+
 
   return (
     <>

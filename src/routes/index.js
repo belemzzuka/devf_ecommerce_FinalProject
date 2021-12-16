@@ -10,6 +10,7 @@ import { useUserContext } from '../context/userContext';
 import SearchPage from '../views/SearchPage';
 import New from '../views/New';
 
+
 const Logout = () => {
     window.localStorage.removeItem('token'); //Aquí solamente remueve el token
     const context = useUserContext(); // crea una variable context para usar el useUserContext
