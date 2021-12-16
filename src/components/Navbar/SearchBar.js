@@ -27,16 +27,17 @@ export default function Search() {
     
 
   return (
-    <div className="div__searchbar">
-        <input
-          type="text"
-          placeholder="Ingresa tu ciudad"
-          onChange={inputHandler}
-          value={valorInput}
-        />
-        <button className="text-boton" onClick={submitHandler}>Buscar</button>
-      </div>
-      )
-      }
+    <div className="div__datos" class="input-group mb-3">
+      <input
+        type="text"
+        placeholder="Encuentra productos..."
+        onChange={inputHandler}
+        class="form-control"
+        value={valorInput}
+      />
+      <a className="text-boton" onClick={submitHandler} class="btn btn-outline-secondary" >Buscar</a>
+    </div>
+    )
+}
 
      // export {resultadoFinales}
