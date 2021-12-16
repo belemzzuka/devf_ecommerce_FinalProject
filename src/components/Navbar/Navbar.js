@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import {useUserContext} from '../../context/userContext'
 //import {useProductContext} from "../../context/productContext";
 import SearchBar from "./SearchBar";
-import { IconButton } from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
-import { Badge } from "@material-ui/core";
+//import { IconButton } from "@material-ui/core";
+//import { ShoppingCart } from "@material-ui/icons";
+//import { Badge } from "@material-ui/core";
 
 
 
@@ -37,8 +37,9 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
 
+
+            {/* CUANDO EL USUARIO ADMIN ESTA LOGGEADO MUESTRA ESTO EN LA NAVBAR */}
             {context.usuarioActual && context.usuarioActual.user.role === "ADMIN" && 
-            
             <>
             <li>
               <Link to="/profile">
@@ -60,9 +61,7 @@ const Navbar = () => {
             
             }
             
-
-
-            
+            {/* CUANDO EL USUARIO CUSTOMER ESTA LOGGEADO MUESTRA ESTO EN LA NAVBAR */}
             {context.usuarioActual && context.usuarioActual.user.role === "CUSTOMER" && 
             <>
             <li>
@@ -80,7 +79,7 @@ const Navbar = () => {
             }
             
             
-            
+            {/* CUANDO NO ESTA LOGGEADO MUESTRA ESTO EN LA NAVBAR */}
             {!context.usuarioActual && 
                           <>
                           <li>
@@ -92,7 +91,9 @@ const Navbar = () => {
                         </>
             }
             
-
+            <li>
+              <Link to="/shoppingcart">Shopping</Link>
+            </li>
           </div>
         </ul>
       </nav>

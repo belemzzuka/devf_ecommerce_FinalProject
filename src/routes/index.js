@@ -9,6 +9,7 @@ import Navbar from '../components/Navbar';
 import { useUserContext } from '../context/userContext';
 import SearchPage from '../views/SearchPage';
 import New from '../views/New';
+import ShoppingCart from '../views/ShoppingCart';
 
 
 const Logout = () => {
@@ -32,6 +33,7 @@ export default function Routes() {
             <Route exact path="/search" component={SearchPage} />
             <Route exact path="/new" component={New} />
             <Route path="/item/:id" component={Item} />
+            <Route path="/shoppingcart" component={ShoppingCart} />
         </Switch>
     </Router>
     );

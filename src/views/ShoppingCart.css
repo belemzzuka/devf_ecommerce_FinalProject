@@ -1,0 +1,36 @@
+.shopping__title{
+    display:flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.carrito{
+    display: flex;
+    margin: 0px 150px;
+    width:80%;
+}
+
+.carrito__item{
+    width:70%;
+}
+
+.carrito__item span{
+    margin-left: 50px;
+}
+
+.carrito__item button{
+    margin-left: 20px;
+}
+
+.carrito__item img{
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width:6%;
+}
+
+.checkout{
+    width:30%;
+    margin-left:20px;
+}
