@@ -70,9 +70,6 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/item">Productos</Link>
-            </li>
-            <li>
               <Link to="/logout">Logout</Link>
             </li>
             </>
